@@ -21,7 +21,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   bool _isSquared(int valoare) {
-   final int square = sqrt(valoare).toInt();
+    final int square = sqrt(valoare).toInt();
     if (square * square == valoare) {
       return true;
     }
@@ -29,7 +29,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   bool _isCubed(int valoare) {
-   final int cubed = pow(valoare, 1 / 3.0).ceil();
+    final int cubed = pow(valoare, 1 / 3.0).ceil();
     if (cubed * cubed * cubed == valoare) {
       return true;
     }
@@ -45,12 +45,9 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Padding(
           padding: const EdgeInsets.all(15),
           child: Column(children: <Widget>[
-            const Text(
-                'Please input a number to see if it is square or triangle.',
-                style: TextStyle(fontSize: 20.0)),
+            const Text('Please input a number to see if it is square or triangle.', style: TextStyle(fontSize: 20.0)),
             TextField(
-              keyboardType:
-                  const TextInputType.numberWithOptions(decimal: false),
+              keyboardType: TextInputType.number,
               controller: _myController,
             ),
           ])),
@@ -62,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
               if (_isSquared(_valoare) && _isCubed(_valoare)) {
                 showDialog(
                   context: context,
-                  builder: (context) {
+                  builder: (BuildContext context) {
                     return AlertDialog(
                       content: Text('$_valoare is both SQUARE and TRIANGULAR'),
                     );
@@ -71,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
               } else if (_isSquared(_valoare)) {
                 showDialog(
                   context: context,
-                  builder: (context) {
+                  builder: (BuildContext context) {
                     return AlertDialog(
                       content: Text('$_valoare is SQUARE'),
                     );
@@ -80,7 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
               } else if (_isCubed(_valoare)) {
                 showDialog(
                   context: context,
-                  builder: (context) {
+                  builder: (BuildContext context) {
                     return AlertDialog(
                       content: Text('$_valoare is TRIANGULAR'),
                     );
@@ -89,10 +86,9 @@ class _MyHomePageState extends State<MyHomePage> {
               } else {
                 showDialog(
                   context: context,
-                  builder: (context) {
+                  builder: (BuildContext context) {
                     return AlertDialog(
-                      content:
-                          Text('$_valoare is neither SQUARE or TRIANGULAR'),
+                      content: Text('$_valoare is neither SQUARE or TRIANGULAR'),
                     );
                   },
                 );
