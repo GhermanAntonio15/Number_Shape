@@ -45,7 +45,9 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Padding(
           padding: const EdgeInsets.all(15),
           child: Column(children: <Widget>[
-            const Text('Please input a number to see if it is square or triangle.', style: TextStyle(fontSize: 20.0)),
+            const Text(
+                'Please input a number to see if it is square or triangle.',
+                style: TextStyle(fontSize: 20.0)),
             TextField(
               keyboardType: TextInputType.number,
               controller: _myController,
@@ -88,7 +90,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   context: context,
                   builder: (BuildContext context) {
                     return AlertDialog(
-                      content: Text('$_valoare is neither SQUARE or TRIANGULAR'),
+                      content:
+                          Text('$_valoare is neither SQUARE or TRIANGULAR'),
                     );
                   },
                 );
